@@ -18,7 +18,9 @@ program
   .command('generate')
   .alias('gen')
   .description('generate diagrams in the diagrams directory')
+  .option("--path <path>", "The path to put the generate from. defaults to ./diagrams")
   .action( (options) ->
+    options.path = options.path || "./diagrams"
     require('./commands/generate')(options)
   )
 

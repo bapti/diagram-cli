@@ -3,12 +3,12 @@ path = require('path');
 fs = require('fs');
 globby = require('globby');
 plantuml = require('node-plantuml');
-async = require('async');
 del = require('del');
 _ = require('lodash')
 
-module.exports = () ->
+module.exports = (options) ->
   console.log 'hi from generate'
+  console.log options.path
 
 
 
