@@ -30,7 +30,13 @@
   "dependencies": {
     "coffee-script": "^1.10.0",
     "commander": "^2.9.0",
-    "highland": "^2.5.1"
+    "del": "^2.2.0",
+    "fs-extra": "^0.26.2",
+    "globby": "^4.0.0",
+    "handlebars": "^4.0.5",
+    "highland": "^2.5.1",
+    "lodash": "^3.10.1",
+    "node-plantuml": "^0.4.3"
   },
   "devDependencies": {
     "mocha": "^2.3.4",

@@ -1,15 +1,15 @@
+Handlebars = require('handlebars');
+path = require('path');
+fs = require('fs');
+globby = require('globby');
+plantuml = require('node-plantuml');
+async = require('async');
+del = require('del');
+_ = require('lodash')
 
 module.exports = () ->
   console.log 'hi from generate'
 
-# Handlebars = require('handlebars');
-# path = require('path');
-# fs = require('fs');
-# globby = require('globby');
-# plantuml = require('node-plantuml');
-# async = require('async');
-# del = require('del');
-# _ = require('lodash')
 
 
 # del(['./img/*.png'])

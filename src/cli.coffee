@@ -4,9 +4,13 @@ program
   .version(require('./../package.json').version)
 
 program
-  .command('init')
+  .command('init [ path]')
   .description('initialise the diagrams directory')
+  .option("--project <project>", "The name of your project")
+  .option("--path <path>", "The path to put the /diagrams folder. defaults to ./")
   .action( (options) ->
+    options.project = options.project || "a cool project"
+    options.path = options.path || "./diagrams"
     require('./commands/init')(options)
   )
 

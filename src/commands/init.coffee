@@ -1,3 +1,5 @@
+fsExtra = require('fs-extra')
 
-module.exports = () ->
-  console.log 'hi from init'
+module.exports = (options) ->
+  fsExtra.mkdirsSync(options.path)
+  fsExtra.copySync('./template', options.path)
