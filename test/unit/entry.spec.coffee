@@ -6,3 +6,6 @@ describe 'A mock unit test', () ->
 
   it 'should pass again', () ->
     [1,2,3].should.match([1,2,3])
+
+  it 'should fail', () ->
+    true.should.equal(false)
