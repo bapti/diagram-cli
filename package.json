@@ -1,0 +1,38 @@
+{
+  "name": "diagram-cli",
+  "version": "0.0.1",
+  "description": "Plant UML cli for generating diagrams",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "mocha \"test/unit/**/*.spec.coffee\" --compilers coffee:coffee-script/register",
+    "test:integration": "mocha \"test/integration/**/*.spec.coffee\" --compilers coffee:coffee-script/register"
+  },
+  "bin": {
+    "diagram": "./cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bapti/diagram-cli.git"
+  },
+  "keywords": [
+    "http",
+    "api",
+    "testing",
+    "streaming"
+  ],
+  "author": "Neil Crawford <neil.crawford@gmail.com> (https://github.com/bapti)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bapti/diagram-cli/issues"
+  },
+  "homepage": "https://github.com/bapti/diagram-cli#readme",
+  "dependencies": {
+    "coffee-script": "^1.10.0",
+    "highland": "^2.5.1"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.4",
+    "should": "^8.0.1"
+  }
+}
