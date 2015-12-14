@@ -16,10 +16,10 @@
     "url": "git+https://github.com/bapti/diagram-cli.git"
   },
   "keywords": [
-    "http",
-    "api",
-    "testing",
-    "streaming"
+    "PlantUML",
+    "Plant UML",
+    "diagram",
+    "diagrams"
   ],
   "author": "Neil Crawford <neil.crawford@gmail.com> (https://github.com/bapti)",
   "license": "MIT",
