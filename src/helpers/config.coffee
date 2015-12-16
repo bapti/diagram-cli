@@ -1,9 +1,7 @@
 path = require 'path'
 
-diagramsPath = path.resolve('./diagrams')
-
-module.exports =
-  diagramsPath: diagramsPath
-  imgPath: path.resolve("#{diagramsPath}/img")
-  pumlPath: path.resolve("#{diagramsPath}/puml")
-  mdPath: path.resolve("#{diagramsPath}/md")
+module.exports = (basePath) ->
+  diagramsPath: path.resolve(basePath)
+  imgPath: path.resolve("#{basePath}/img")
+  pumlPath: path.resolve("#{basePath}/puml")
+  mdPath: path.resolve("#{basePath}/md")
