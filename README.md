@@ -18,3 +18,7 @@ diagrams init
 # generate diagrams
 diagrams
 ```
+
+#### Useful
+
+- http://unitjs.com/guide/should-js.html
