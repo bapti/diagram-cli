@@ -10,9 +10,8 @@ program
   .action( commands.init )
 
 program
-  .command('generate')
-  .alias('gen')
-  .description('generate diagrams in the diagrams directory')
-  .action( commands.generate )
+  .command('make', { isDefault: true })
+  .description('make diagrams in the diagrams directory')
+  .action( commands.make )
 
 program.parse( process.argv )

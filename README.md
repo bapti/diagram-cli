@@ -10,11 +10,11 @@ Command line interface for generating diagrams from plant uml files in a convent
 npm install -g diagram-cli
 
 # show usage
-diagram --help
+diagrams --help
 
 # initialise folders and files
-diagram init
+diagrams init
 
 # generate diagrams
-diagram
+diagrams
 ```
