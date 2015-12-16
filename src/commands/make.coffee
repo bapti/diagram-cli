@@ -1,24 +1,21 @@
-Handlebars = require('handlebars');
-path = require('path');
-fs = require('fs');
-globby = require('globby');
-plantuml = require('node-plantuml');
-del = require('del');
+Handlebars = require('handlebars')
+path = require('path')
+fs = require('fs')
+globby = require('globby')
+plantuml = require('node-plantuml')
+del = require('del')
 _ = require('lodash')
 
-module.exports = (options) ->
-  console.log 'hi from generate'
-  console.log options.path
+config = require('./../helpers/config')
+images = require('./../helpers/image-meta-data')
 
-  diagramsPath = path.resolve('./diagrams')
+module.exports = (options) ->
 
   unless fs.statSync(diagramsPath).isDirectory()
     throw new Error "Diagrams folder not found"
 
-
-
-# del(['./img/*.png'])
-# globby(['./puml/**/*.puml'])
+  del.sync(["#{imgPath}/*.png"])
+  pumlFiles = globby.sync(["#{pumlPath}/*.puml"])
 
 # var exportPng = function(filePath, done){
 # 	console.log("exporting ", filePath);
@@ -38,15 +35,7 @@ module.exports = (options) ->
 # 		async.each(paths, exportPng, done);
 # 	});
 #
-#   globby(['./img/**/*.png']).then(function(paths) {
-#   	var images = paths.map(function(filePath) {
-# 			var fileName = path.basename(filePath)
-#       return {
-# 				'image_readable_name': _.startCase(path.basename(filePath, '.png')),
-# 				'image_link': _.kebabCase( path.basename(filePath, '.png') ),
-# 				'image_file_name': path.basename(filePath)
-# 			};
-#     });
+#
 #
 # 		console.log("Writing images to markdown", images);
 #
