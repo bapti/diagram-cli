@@ -41,9 +41,12 @@ brew install graphviz
 # Add the path to your environment variables
 # C:\Program Files (x86)\Graphviz2.38\bin
 
-# Install gulp globally
+# Install diagrams globally
 npm install -g diagram-cli
 
-# running the following command in the root of your repository will generate all diagrams
-diagram generate
+# init will create a /diagrams template folder
+diagrams init
+
+# generate will generate all diagrams within the folder to pngs
+diagrams generate
 ```

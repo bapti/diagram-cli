@@ -1,27 +1,18 @@
-program = require('commander');
+program = require 'commander'
+commands = require './index'
 
 program
   .version(require('./../package.json').version)
 
 program
-  .command('init [ path]')
+  .command('init')
   .description('initialise the diagrams directory')
-  .option("--project <project>", "The name of your project")
-  .option("--path <path>", "The path to put the /diagrams folder. defaults to ./")
-  .action( (options) ->
-    options.project = options.project || "a cool project"
-    options.path = options.path || "./diagrams"
-    require('./commands/init')(options)
-  )
+  .action( commands.init )
 
 program
   .command('generate')
   .alias('gen')
   .description('generate diagrams in the diagrams directory')
-  .option("--path <path>", "The path to put the generate from. defaults to ./diagrams")
-  .action( (options) ->
-    options.path = options.path || "./diagrams"
-    require('./commands/generate')(options)
-  )
+  .action( commands.generate )
 
 program.parse( process.argv )

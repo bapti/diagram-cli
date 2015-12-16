@@ -4,12 +4,10 @@
   "description": "Plant UML cli for generating diagrams",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test:unit && npm run test:integration",
-    "test:unit": "mocha \"test/unit/**/*.spec.coffee\" --compilers coffee:coffee-script/register",
-    "test:integration": "mocha \"test/integration/**/*.spec.coffee\" --compilers coffee:coffee-script/register"
+    "test": "mocha --compilers coffee:coffee-script/register"
   },
   "bin": {
-    "diagram": "./cli.js"
+    "diagrams": "./cli.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +16,7 @@
   "keywords": [
     "PlantUML",
     "Plant UML",
+    "UML",
     "diagram",
     "diagrams"
   ],
@@ -35,6 +34,7 @@
     "globby": "^4.0.0",
     "handlebars": "^4.0.5",
     "highland": "^2.5.1",
+    "js-yaml": "^3.4.6",
     "lodash": "^3.10.1",
     "node-plantuml": "^0.4.3"
   },
