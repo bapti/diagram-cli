@@ -8,14 +8,13 @@ sut = require('./../src').init
 diagramPath = path.resolve('diagrams')
 
 describe 'Init command', () ->
-  describe 'Should succeed and', () ->
-    statsResult = null
+  statsResult = null
 
-    before () ->
-      del.sync([diagramPath])
-      sut({path: diagramPath})
-      statsResult = fs.statSync(diagramPath)
+  before () ->
+    del.sync([diagramPath])
+    sut({path: diagramPath})
+    statsResult = fs.statSync(diagramPath)
 
-    it 'Should create folder', () ->
-      statsResult.isDirectory()
-        .should.be.true
+  it 'Should create diagrams folder', () ->
+    statsResult.isDirectory()
+      .should.be.true

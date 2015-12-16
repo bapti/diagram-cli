@@ -10,6 +10,11 @@ module.exports = (options) ->
   console.log 'hi from generate'
   console.log options.path
 
+  diagramsPath = path.resolve('./diagrams')
+
+  unless fs.statSync(diagramsPath).isDirectory()
+    throw new Error "Diagrams folder not found"
+
 
 
 # del(['./img/*.png'])
