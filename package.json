@@ -1,7 +1,7 @@
 {
   "name": "diagram-cli",
   "version": "0.0.1",
-  "description": "Plant UML cli for generating diagrams",
+  "description": "CLI for generating Plant UML diagrams \n and displaying them in your github markdown documents",
   "main": "index.js",
   "scripts": {
     "test": "mocha --compilers coffee:coffee-script/register"
