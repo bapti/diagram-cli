@@ -3,7 +3,7 @@ del = require 'del'
 path = require 'path'
 fs = require 'fs'
 
-sut = require('./../src/helpers/image-meta-data')
+sut = require('./../src/images').metaData
 imgPath = path.resolve('./test-assets')
 
 describe 'Image meta data helper', () ->

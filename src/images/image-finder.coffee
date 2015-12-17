@@ -2,8 +2,8 @@ globby = require 'globby'
 path = require 'path'
 _ = require 'lodash'
 
-module.exports = (imgPath) ->
-  paths = globby.sync(["#{imgPath}/*.png"])
+module.exports = (imagePath) ->
+  paths = globby.sync(["#{imagePath}/*.png"])
   paths.map (filePath) ->
     baseLower = path.basename(filePath, '.png').toLowerCase()
     return {

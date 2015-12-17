@@ -2,8 +2,8 @@ should = require 'should'
 path = require 'path'
 fs = require 'fs'
 
-sut = require('./../src/helpers/config')
-diagramsPath = path.resolve('./diagrams')
+sut = require('./../src/config')
+diagramsPath = path.resolve('./template')
 
 describe 'Config helper', () ->
 
@@ -12,17 +12,17 @@ describe 'Config helper', () ->
     result = sut(diagramsPath)
 
   it 'Diagrams path should be correct', () ->
-    result.diagramsPath
-      .should.containEql("diagrams")
+    result.diagramsPath.should.containEql("template")
 
   it 'Img path should be correct', () ->
-    result.imgPath
-      .should.containEql("diagrams\\img")
-
-  it 'Markdown path should be correct', () ->
-    result.mdPath
-      .should.containEql("diagrams\\md")
+    result.imagePath.should.containEql("img")
 
   it 'Plant UML path should be correct', () ->
-    result.pumlPath
-      .should.containEql("diagrams\\puml")
+    result.pumlPath.should.containEql("puml")
+
+  it 'readmePath template path should be correct', () ->
+    result.readmeTemplatePath.should.containEql("hbs")
+    result.readmeTemplatePath.should.containEql("README.hbs")
+
+  it 'readmePath template path should be correct', () ->
+    result.readmeOutputPath.should.containEql("README.md")

@@ -3,6 +3,9 @@ Command line interface for generating diagrams from plant uml files in a convent
 
 [![Build Status](https://travis-ci.org/bapti/diagram-cli.svg?branch=master)](https://travis-ci.org/bapti/diagram-cli)
 
+
+#WARNING - LIBRARY NOT FUNCTIONAL YET!
+
 #### Contents
 
 - [What does it do](#what-does-it-do)

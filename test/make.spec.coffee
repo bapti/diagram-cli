@@ -15,7 +15,3 @@ describe 'Make command', () ->
 
     it 'folder does not exist', () ->
       should.throws sut
-
-  # describe 'Should succeed when', () ->
-  #   before () ->
-  #     del.sync([diagramPath])
