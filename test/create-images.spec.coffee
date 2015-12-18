@@ -11,6 +11,15 @@ outputPath = path.resolve('./test-output')
 
 describe 'Image create', () ->
   @.timeout(5000)
+
+  before(() ->
+    del.sync([outputPath])
+  )
+
+  after(() ->
+    del.sync([outputPath])
+  )
+
   it 'Has 3 images in the test-output folder', (done) ->
     sut( pumlPath, outputPath, (err, results) ->
       results.should.have.lengthOf(3)
