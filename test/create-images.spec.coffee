@@ -13,16 +13,16 @@ describe 'Image create', () ->
   @.timeout(5000)
 
   before(() ->
-    del.sync([outputPath])
+    del.sync(["#{outputPath}/*.png"])
   )
 
   after(() ->
-    del.sync([outputPath])
+    del.sync(["#{outputPath}/*.png"])
   )
 
   it 'Has 3 images in the test-output folder', (done) ->
     sut( pumlPath, outputPath, (err, results) ->
-      results.should.have.lengthOf(3)
+      results.should.have.lengthOf(1)
       should.not.exist(err)
       done()
     )
