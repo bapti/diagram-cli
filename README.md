@@ -1,4 +1,6 @@
 # Plant UML diagram-cli
+Easily create diagrams for your github repository.  
+
 Command line interface for generating diagrams from plant uml files in a convention based way and displaying them in markdown documents
 
 [![Build Status](https://travis-ci.org/bapti/diagram-cli.svg?branch=master)](https://travis-ci.org/bapti/diagram-cli)
@@ -13,9 +15,21 @@ Command line interface for generating diagrams from plant uml files in a convent
 
 #### What does it do?
 
-Running `diagrams init` creates a `./diagrams` folder populated with some default folders.  Running a further command of `diagrams make` generates any files in the `./diagrams/puml` into `.png` files in the `./diagrams/img` folder.  
+Running `diagrams init` creates a `./diagrams` folder populated with some default folders like below.  
 
-It also creates a `README.md` in the root of `./diagrams` and populates it with links to the `.png` files so they automatically appear in your github repository. All you have to do is add a link in your front page of your github with `[Link to diagrams](./diagrams/README.md)`.
+```sh
+root                 # your root folder
+  - diagrams         # all diagrams in here
+    - diagrams.yml   # config file
+    - README.md      # readme file with all diagrams displayed as pngs
+    - img            # images are generated to here
+    - puml           # all diagram files go in here
+    - hbs            # template for generated markdown
+```
+
+Running a further command of `diagrams make` generates any files in the `./diagrams/puml` into `.png` files in the `./diagrams/img` folder.
+
+It also creates a `README.md` in the root of `./diagrams` and populates it with links to the `.png` files so they automatically appear in your github repository. All you have to do is add a link in your front page of your github with something like `[Diagrams](./diagrams/README.md)`.
 
 #### Usage
 
