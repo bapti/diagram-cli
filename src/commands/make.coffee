@@ -20,12 +20,12 @@ module.exports = (options) ->
   del.sync([config.imagePath])
   fs.mkdirsSync(config.imagePath)
 
-  images.create(config.pumlPath, config.imagePath ,() ->
-    imageMetaData = images.metaData(config.imagePath)
-
+  images.create(config.pumlPath, config.imagePath ,(err, paths) ->
+    imageMetaData = images.metaData(paths)
+    allconfig = _.merge({images: imageMetaData}, config)
     readme.create(
       config.readmeTemplatePath
       config.readmeOutputPath
-      _.merge(imageMetaData, config)
+      allconfig
     )
   )
