@@ -20,7 +20,7 @@ describe 'Image create', () ->
     del.sync(["#{outputPath}/*.png"])
   )
 
-  it 'Has 3 images in the test-output folder', (done) ->
+  it 'Has 1 image in the test-output folder', (done) ->
     sut( pumlPath, outputPath, (err, results) ->
       results.should.have.lengthOf(1)
       should.not.exist(err)
