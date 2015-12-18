@@ -10,7 +10,7 @@ program
   .action( commands.init )
 
 program
-  .command('make', { isDefault: true })
+  .command('make')
   .description('make diagrams in the diagrams directory')
   .action( commands.make )
 

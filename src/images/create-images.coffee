@@ -24,8 +24,6 @@ module.exports = (pumlPath, imagePath, done) ->
   exporter = _.wrapCallback( _.curry(exportPng, imagePath) )
   errors = []
 
-  fs.mkdirsSync("#{imagePath}");
-
   _(globby(["#{pumlPath}/*.puml"]))
     .flatten()
     .map(exporter)

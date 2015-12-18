@@ -16,7 +16,7 @@ Command line interface for generating diagrams from plant uml files in a convent
 
 #### What does it do?
 
-Running `diagrams init` creates a `./diagrams` folder populated with some default folders.  Running a further command of `diagrams` generates any files in the `./diagrams/puml` into `.png` files in the `./diagrams/img` folder.  
+Running `diagrams init` creates a `./diagrams` folder populated with some default folders.  Running a further command of `diagrams make` generates any files in the `./diagrams/puml` into `.png` files in the `./diagrams/img` folder.  
 
 It also creates a `README.md` in the root of `./diagrams` and populates it with links to the `.png` files so they automatically appear in your github repository. All you have to do is add a link in your front page of your github with `[Link to diagrams](./diagrams/README.md)`.
 
@@ -33,7 +33,7 @@ diagrams --help
 diagrams init
 
 # generate diagrams
-diagrams
+diagrams make
 ```
 
 #### Windows requirements
