@@ -2,15 +2,18 @@ should = require 'should'
 del = require 'del'
 path = require 'path'
 fs = require 'fs'
+globby = require 'globby'
 
-sut = require('./../src/images').metaData
-imgPath = path.resolve('./test-assets')
+sut = require('./../src/images').create
 
-describe 'Image meta data helper', () ->
+pumlPath = path.resolve('./test-puml')
+outputPath = path.resolve('./test-output')
 
-  result = null
-  before () ->
-    result = sut(imgPath)
-
-  it 'Has 2 results', () ->
-    result.should.have.length(2);
+describe 'Image create', () ->
+  @.timeout(5000)
+  it 'Has 3 images in the test-output folder', (done) ->
+    sut( pumlPath, outputPath, (err, results) ->
+      results.should.have.lengthOf(3)
+      should.not.exist(err)
+      done()
+    )

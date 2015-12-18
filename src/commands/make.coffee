@@ -12,6 +12,13 @@ module.exports = (options) ->
     throw new Error "Diagrams folder not found"
 
   del.sync(["#{conifg.imagePath}/*.png"])
+
   images.create(conifg.pumlPath)
+
   imageMetaData = images.metaData(config.imgPath)
-  readme.create(_.merge(imageMetaData, config))
+
+  readme.create(
+    config.readmeTemplatePath
+    config.readmeOutputPath
+    _.merge(imageMetaData, config)
+  )

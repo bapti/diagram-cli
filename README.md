@@ -8,7 +8,7 @@ Command line interface for generating diagrams from plant uml files in a convent
 
 #### Contents
 
-- [What does it do](#what-does-it-do)
+- [What does it do?](#what-does-it-do)
 - [Usage](#usage)
 - [Windows requirements](#windows-requirements)
 - [Mac requirements](#mac-requirements)

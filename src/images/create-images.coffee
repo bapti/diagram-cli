@@ -1,21 +1,40 @@
 globby = require 'globby'
-fs = require 'fs'
 _ = require 'highland'
+plantuml = require 'node-plantuml'
+path = require 'path'
+fs = require 'fs-extra'
 
-# var exportPng = function(filePath, done){
-# 	console.log("exporting ", filePath);
-#   var gen = plantuml.generate(filePath, { format: 'png' })
-#   var chunks = []
-#
-#   gen.out.on('data', function (chunk) { chunks.push(chunk) })
-#   gen.out.on('end', function () {
-# 		var fileName = path.basename(filePath, '.puml')
-#     var buffer = Buffer.concat(chunks)
-# 		fs.writeFile("./img/" + fileName + ".png",  buffer, done);
-#   })
-# }
+
+exportPng = (imagePath, filePath, done) ->
+  gen = plantuml.generate(filePath, { format: 'png' })
+  chunks = []
+
+  gen.out.on 'data', (chunk) ->
+    chunks.push chunk
+
+  gen.out.on 'end', () ->
+    fileName = path.basename(filePath, '.puml')
+    buffer = Buffer.concat(chunks)
+    outputPath = "#{imagePath}/#{fileName}.png"
+    fs.writeFile(outputPath, buffer, (err) ->
+      done(err, outputPath)
+    )
 
 module.exports = (pumlPath, imagePath, done) ->
-  _(globby(["#{conifg.pumlPath}/*.puml"]))
-    .map(_.log)
-    .done(done)
+  exporter = _.wrapCallback( _.curry(exportPng, imagePath) )
+  errors = []
+
+  fs.mkdirsSync("#{imagePath}");
+
+  _(globby(["#{pumlPath}/*.puml"]))
+    .flatten()
+    .map(exporter)
+    .parallel(10)
+    .errors((err) ->
+      errors.push err
+      console.log err
+    )
+    .toArray((results) ->
+      err = if errors.length > 0 then "Plant UML generation failed" else null
+      done(err, results)
+    )
