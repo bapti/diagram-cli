@@ -21,7 +21,7 @@ module.exports = (options) ->
   fs.mkdirsSync(config.imagePath)
 
   images.create(config.pumlPath, config.imagePath ,() ->
-    imageMetaData = images.metaData(config.imgPath)
+    imageMetaData = images.metaData(config.imagePath)
 
     readme.create(
       config.readmeTemplatePath
