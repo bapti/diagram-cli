@@ -4,6 +4,7 @@ Easily create diagrams for your github repository.
 Command line interface for generating diagrams from plant uml files in a convention based way and displaying them in markdown documents
 
 [![Build Status](https://travis-ci.org/bapti/diagram-cli.svg?branch=master)](https://travis-ci.org/bapti/diagram-cli)
+[![npm version](https://badge.fury.io/js/diagram-cli.svg)](https://badge.fury.io/js/diagram-cli)
 
 #### Contents
 
