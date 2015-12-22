@@ -33,6 +33,8 @@ It also creates a `README.md` in the root of `./diagrams` and populates it with 
 
 #### Usage
 
+Using the [npm package](https://www.npmjs.com/package/diagram-cli) 
+
 ```sh
 # install the cli globally
 npm install -g diagram-cli
