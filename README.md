@@ -13,6 +13,7 @@ Command line interface for generating diagrams from plant uml files in a convent
 - [Windows requirements](#windows-requirements)
 - [Mac requirements](#mac-requirements)
 - [Libraries and useful links](#libraries-and-useful-links)
+- [To do](#to-do)
 
 #### What does it do?
 
@@ -34,7 +35,7 @@ It also creates a `README.md` in the root of `./diagrams` and populates it with 
 
 #### Usage
 
-Using the [npm package](https://www.npmjs.com/package/diagram-cli) 
+Using the [npm package](https://www.npmjs.com/package/diagram-cli)
 
 ```sh
 # install the cli globally
@@ -71,3 +72,8 @@ brew install graphviz
 #### Libraries and useful links
 
 - Should JS [docs](http://unitjs.com/guide/should-js.html)
+
+#### To do
+
+- [ ] Add description markdown files that get build in tandem
+- [ ] Add a server to serve as a website
